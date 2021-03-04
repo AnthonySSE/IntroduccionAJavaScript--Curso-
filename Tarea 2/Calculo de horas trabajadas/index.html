@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Práctica 2: Ejercicio B</h1>
+    <hr style="border-width: 3px; border-color: black;">
+    <script>
+        
+        //Declaracion de variables
+        let horastrabajadas;
+        let horasextras;
+        let pagohora;
+        let pagohoraE;
+        let totalHorasNormales;
+        let totalHorasExtras;
+        let totalPorHoras;
+        let totalGeneral;
+        let cantidadHijos;
+        let solicitudBonificacion;
+        let calcSolicitudBonificacion;
+
+        // Entrada de datos
+        horastrabajadas=prompt("Ingrese la cantidad de horas trabajadas: ");
+        parseInt(horastrabajadas);
+        horasextras=prompt("Ingrese la cantidad de horas extras trabajadas: ");
+        parseInt(horasextras);
+        pagohora=prompt("Introduzca cuanto es el pago por hora: ");
+        parseInt(pagohora);
+        pagohoraE=prompt("Introduzca cuanto es el pago por hora extra: ");
+        parseInt(pagohoraE);
+        cantidadHijos=prompt("Ingrese la cantidad de hijos que tiene: ");
+        parseInt(cantidadHijos);
+        solicitudBonificacion=prompt("¿Le aprobaron su solicitud de bonificacion? (S/N)");
+
+
+        //Evaluando que cierta condicion se cumpla
+        while (solicitudBonificacion!= "S" && solicitudBonificacion!= "s" && solicitudBonificacion!= "N" && solicitudBonificacion!= "n") {
+            alert("¡POR FAVOR, INGRESE SOLO S o N!");
+            solicitudBonificacion=prompt("¿Le aprobaron su solicitud de bonificacion? (S/N)");
+        }
+        if(solicitudBonificacion=="S" || solicitudBonificacion== "s")
+        {
+            calcSolicitudBonificacion= cantidadHijos*20;
+        }
+        else
+        {
+            calcSolicitudBonificacion = 0;
+        }
+
+        //Calculo de las horas
+        totalHorasNormales=horastrabajadas*pagohora;
+        totalHorasExtras=horasextras*pagohoraE;
+        totalPorHoras=totalHorasNormales+totalHorasExtras;
+        totalGeneral=totalPorHoras+calcSolicitudBonificacion;
+
+        //Impresion de la información relevante en el documento
+        document.write("Cantidad de horas normales trabajadas: " + horastrabajadas +"<br>");
+        document.write("Cantidad de horas extra trabajadas: " + horasextras+"<br>");
+        document.write("Valor de hora: " + pagohora+"<br>");
+        document.write("Valor de hora extra: " + pagohoraE+"<br>");
+        document.write("Pago por horas trabajadas: " + totalHorasNormales+"<br>");
+        document.write("Pago por horas extra trabajadas: " + totalHorasExtras+"<br>");
+        document.write("Total a pagar por horas trabajadas: " + totalPorHoras+"<br>");
+        document.write("Cantidad de hijos que tiene: " + cantidadHijos+"<br>");
+        document.write("Total a pagar por los hijos: " + calcSolicitudBonificacion+"<br>");
+        document.write("Total general: " + totalGeneral+"<br>");
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h1 style="text-align: center;">Práctica 2: Ejercicio A</h1>
+   <hr style="border-width: 3px; border-color: black;">
+    <script>
+      //Variables
+    var tequilatero=0;
+  var tisosceles=0;
+  var tescaleno=0;
+  var lado1;
+  var lado2;
+  var lado3;
+  var f;
+  var triangulo= prompt("Cantidad de triangulos a leer:")
+  var n=triangulo;
+  var tnumero;
+  parseInt(n);
+  // Bucle para leer más de un triangulo
+  for(f=1;f<=n;f++)
+  {
+    tnumero = alert("Triangulo numero " + f + " proceda a ingresar los lados.")
+    lado1=prompt("Ingrese primer lado:");
+    lado1=parseInt(lado1);
+    lado2=prompt("Ingrese segundo lado:");
+    lado2=parseInt(lado2);
+    lado3=prompt("Ingrese tercer lado:");
+    lado3=parseInt(lado3);
+    if (lado1==lado2 && lado1==lado3)
+    {
+      document.write(f+ "- Triangulo equilatero.<br>");
+      tequilatero++;
+    }
+    else if (lado1==lado2 || lado1==lado3 || lado2==lado3)
+      {
+        document.write(f+ "- Triangulo isósceles.<br>");
+        tisosceles++;
+      }
+      else
+      {
+        document.write(f+ "- Triangulo escaleno.<br>");
+        tescaleno++;
+      }
+    }    
+    // Toma de decisiones para determinar cual triangulo fue el que tuvo menos entradas.
+  document.write("<br>");
+  document.write("Cantidad de triangulos equilateros:"+tequilatero+"<br>");
+  document.write("Cantidad de triangulos isosceles:"+tisosceles+"<br>");
+  document.write("Cantidad de triangulos escalenos:"+tescaleno+"<br>");
+  if (tequilatero<tisosceles && tequilatero<tescaleno)
+  {
+    document.write("Se ingresaron menos triangulos equilateros");
+  }
+  else if (tisosceles<tescaleno && tisosceles < tequilatero)
+    {
+      document.write("Se ingresaron menos triangulos isosceles");
+    }
+    else if (tescaleno<tequilatero && tescaleno<tisosceles)
+    {
+      document.write("Se ingresaron menos triangulos escalenos");
+    }
+    // Evaluacion en caso de que más de un triangulo sean los menos ingresados pero con misma cantidad.
+    else if (tequilatero < tisosceles && tequilatero == tescaleno) 
+    {
+      document.write("Se ingresaron menos triángulos equilateros y escalenos (Tienen la misma cantidad)");
+    }
+    else if (tequilatero < tescaleno && tequilatero == tisosceles) 
+    {
+      document.write("Se ingresaron menos triángulos equilateros e isosceles (Tienen la misma cantidad)");
+    }
+    else if (tisosceles < tequilatero && tescaleno == tisosceles) 
+    {
+      document.write("Se ingresaron menos triángulos escalenos e isosceles (Tienen la misma cantidad)");
+    }
+    else if (tisosceles < tescaleno && tequilatero == tisosceles) 
+    {
+      document.write("Se ingresaron menos triángulos equilateros e isosceles (Tienen la misma cantidad)");
+    }
+</script>
+</body>
+</html>
+</body>
+</html>

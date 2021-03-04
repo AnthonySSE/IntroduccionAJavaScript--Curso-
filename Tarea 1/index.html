@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 1: Operadores Logicos</title>
+    <!--Estilo-->
+    <style>
+        h1
+        {
+            text-align:center;
+        }
+        hr
+        {
+            border-width: 3px;
+            border-color: black;
+        }
+        p
+        {
+            font-size: 18px; 
+        }
+        #script
+        {
+            font-size: 22px;
+            font-weight: bold;
+        }
+    </style>
+  
+</head>
+<body>
+   <h1>Práctica 1: Operadores logicos</h1>
+   <hr>
+   <p>
+       Gracias por utilizar esta aplicación para el calculo del clima. <br>
+       Según los datos introducidos: <p id="script">
+     <!--Programacion-->
+     <script>
+
+        let temperatura;
+        let frio = "Está frio.";
+        let nublado = "Está nublado.";
+        let tropical= "Está tropical.";
+        let calor= "Hace calor."
+        temperatura= prompt("Ingrese la temperatura");
+        if (temperatura <10) {
+            window.alert(frio)
+            document.write(frio);
+            console.log(frio)
+        }
+        else if (temperatura >= 10 && temperatura <=20) {
+            window.alert(nublado);
+            document.write(nublado);
+            console.log(nublado);
+        }
+        else if (temperatura >=21 && temperatura <=30) {
+            window.alert(calor)
+            document.write(calor);
+            console.log(calor);
+        }
+        else
+        {
+            window.alert(tropical)
+            document.write(tropical);
+            console.log(tropical);
+        }
+    </script>
+    </p>
+    </p>
+</body>
+</html>
