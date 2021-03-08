@@ -23,22 +23,24 @@
         let cantidadHijos;
         let solicitudBonificacion;
         let calcSolicitudBonificacion;
+        let nombreempleado;
 
         // Entrada de datos
+        nombreempleado=prompt("Ingrese su nombre: ");
         horastrabajadas=prompt("Ingrese la cantidad de horas trabajadas: ");
         parseInt(horastrabajadas);
-        horasextras=prompt("Ingrese la cantidad de horas extras trabajadas: ");
-        parseInt(horasextras);
         pagohora=prompt("Introduzca cuanto es el pago por hora: ");
         parseInt(pagohora);
-        pagohoraE=prompt("Introduzca cuanto es el pago por hora extra: ");
-        parseInt(pagohoraE);
         cantidadHijos=prompt("Ingrese la cantidad de hijos que tiene: ");
         parseInt(cantidadHijos);
         solicitudBonificacion=prompt("¿Le aprobaron su solicitud de bonificacion? (S/N)");
 
 
         //Evaluando que cierta condicion se cumpla
+        if (horastrabajadas > 40) {
+            horasextras = (horastrabajadas-40);
+            pagohoraE = pagohora*1.35;
+        }
         while (solicitudBonificacion!= "S" && solicitudBonificacion!= "s" && solicitudBonificacion!= "N" && solicitudBonificacion!= "n") {
             alert("¡POR FAVOR, INGRESE SOLO S o N!");
             solicitudBonificacion=prompt("¿Le aprobaron su solicitud de bonificacion? (S/N)");
@@ -59,6 +61,7 @@
         totalGeneral=totalPorHoras+calcSolicitudBonificacion;
 
         //Impresion de la información relevante en el documento
+        document.write("Hola, " + nombreempleado + "<br>");
         document.write("Cantidad de horas normales trabajadas: " + horastrabajadas +"<br>");
         document.write("Cantidad de horas extra trabajadas: " + horasextras+"<br>");
         document.write("Valor de hora: " + pagohora+"<br>");
@@ -70,5 +73,10 @@
         document.write("Total a pagar por los hijos: " + calcSolicitudBonificacion+"<br>");
         document.write("Total general: " + totalGeneral+"<br>");
     </script>
+    <br>
+    <br>
+    <footer>
+        Hecho por Anthony Samuel Sánchez Escalante (AKA AnthonySSE)&copy;
+    </footer>
 </body>
 </html>
